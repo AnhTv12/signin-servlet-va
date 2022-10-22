@@ -1,11 +1,14 @@
 package org.kai.academy.signinservlet;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import org.kai.academy.signinservlet.model.Product;
+import org.kai.academy.signinservlet.utils.HibernateUtil;
+
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -18,7 +21,8 @@ public class ProductServlet extends HttpServlet {
     Session session;
 
     @Override
-    public void init(){
+    public void init() throws ServletException {
+        session = HibernateUtil.getSessionFactory().openSession();
     }
 
     @Override
