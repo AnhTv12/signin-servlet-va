@@ -10,32 +10,37 @@ import javax.persistence.Table;
 public class Product {
 
     @Id
-    @Column(name="productCode", nullable=false, unique=true)
+    @Column(name = "productCode", nullable = false, unique = true)
     private String productCode;
 
-    @Column(name="productName")
+    @Column(name = "productName")
     private String productName;
 
-    @Column(name="productLine")
+    @Column(name = "productLine")
     private String productLine;
 
-    @Column(name="productScale")
+    @Column(name = "productScale")
     private String productScale;
 
-    @Column(name="productVendor")
+    @Column(name = "productVendor")
     private String productVendor;
 
-    @Column(name="productDescription")
+    @Column(name = "productDescription")
     private String productDescription;
-
-    @Column(name="quantityInStock")
+    @Column(name = "quantityInStock")
     private int quantityInStock;
 
-    @Column(name="buyPrice")
+    @Column(name = "buyPrice")
     private double buyPrice;
 
-    @Column(name="MSRP")
+    @Column(name = "MSRP")
     private double MSRP;
+
+    @Column(name = "productImageLink")
+    private String productLink;
+
+    @Column(name = "imgBytedata", length = 1000000)
+    private byte[] imgBytedata;
 
     public String getProductCode() {
         return productCode;
@@ -107,6 +112,22 @@ public class Product {
 
     public void setMSRP(double MSRP) {
         this.MSRP = MSRP;
+    }
+
+    public String getProductLink() {
+        return productLink;
+    }
+
+    public void setProductLink(String productLink) {
+        this.productLink = productLink;
+    }
+
+    public byte[] getImgBytedata() {
+        return imgBytedata;
+    }
+
+    public void setImgBytedata(byte[] imgBytedata) {
+        this.imgBytedata = imgBytedata;
     }
 
     @Override
