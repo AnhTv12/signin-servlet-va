@@ -1,6 +1,5 @@
 package org.kai.academy.signinservlet;
 
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,12 +15,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name = "TestServlet", value = "/1")
+@WebServlet(name = "TestServlet", value = "/products")
 public class ProductServlet extends HttpServlet {
     Session session;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         session = HibernateUtil.getSessionFactory().openSession();
     }
 
